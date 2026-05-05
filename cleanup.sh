@@ -1,2 +1,2 @@
 #!/bin/bash
-ip -br a
+ip -с -br a
