@@ -4,7 +4,7 @@
 echo "deb [trusted=yes] https://archive.debian.org/debian buster main" >> /etc/apt/sources.list
 
 # Обновление и установка FRR
-apt update 2>/dev/null
+apt update
 apt install frr -y
 
 # Включение ospfd в демонах
