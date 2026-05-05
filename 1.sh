@@ -17,17 +17,17 @@ sed -i 's/^option domain-name-servers /#option domain-name-servers /' /etc/dhcp/
 # Раскомментирование строки authoritative
 sed -i 's/^#authoritative;/authoritative;/' /etc/dhcp/dhcpd.conf
 
-# Замена блока конфигурации подсети (ищем по комментарию)
-if grep -q "# A slightly different configuration for an internal subnet." /etc/dhcp/dhcpd.conf; then
-    sed -i '/# A slightly different configuration for an internal subnet./,/^}/c\
-# A slightly different configuration for an internal subnet.\
-subnet 192.168.2.0 netmask 255.255.255.240 {\
-    range 192.168.2.2 192.168.2.10;\
-    option domain-name-servers 192.168.1.2;\
-    option domain-search "au-team.irpo";\
-    option routers 192.168.2.1;\
-}' /etc/dhcp/dhcpd.conf
-fi
+# Добавление конфигурации подсети в конец файла
+cat >> /etc/dhcp/dhcpd.conf << 'EOF'
+
+# A slightly different configuration for an internal subnet.
+subnet 192.168.2.0 netmask 255.255.255.240 {
+    range 192.168.2.2 192.168.2.10;
+    option domain-name-servers 192.168.1.2;
+    option domain-search "au-team.irpo";
+    option routers 192.168.2.1;
+}
+EOF
 
 # Перезапуск DHCP-сервера
 systemctl restart isc-dhcp-server
