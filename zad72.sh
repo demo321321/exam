@@ -28,5 +28,3 @@ exit
 do wr mem
 exit
 EOF
-
-echo "Готово! OSPF настроен."
