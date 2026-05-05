@@ -1,6 +1,2 @@
 #!/bin/bash
-useradd sshuser -u 2026
-passwd sshuser
-P@ssw0rd
-P@ssw0rd
-usermod -aG wheel sshuser
+sudo bash -c "useradd sshuser -u 2026 -m -s /bin/bash; echo 'sshuser:P@ssw0rd' | chpasswd; usermod -aG wheel sshuser"
