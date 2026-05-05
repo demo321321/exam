@@ -8,7 +8,6 @@ echo "MaxAuthTries 2" >> /etc/openssh/sshd_config
 echo "Banner /root/banner" >> /etc/openssh/sshd_config
 
 # Создание баннера
-echo "banner    [-M---]" > /root/banner
 echo "Authorized access only" >> /root/banner
 echo "" >> /root/banner
 
