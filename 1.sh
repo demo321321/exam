@@ -20,7 +20,6 @@ sed -i 's/^#authoritative;/authoritative;/' /etc/dhcp/dhcpd.conf
 # Добавление конфигурации подсети в конец файла
 cat >> /etc/dhcp/dhcpd.conf << 'EOF'
 
-# A slightly different configuration for an internal subnet.
 subnet 192.168.2.0 netmask 255.255.255.240 {
     range 192.168.2.2 192.168.2.10;
     option domain-name-servers 192.168.1.2;
@@ -34,5 +33,3 @@ systemctl restart isc-dhcp-server
 
 # Добавление в автозагрузку
 systemctl enable isc-dhcp-server
-
-echo "Готово! DHCP-сервер настроен на HQ-RTR"
