@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Пользователь sshuser успешно создан"
+ip -c -br a
