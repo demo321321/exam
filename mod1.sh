@@ -3,6 +3,7 @@
 # Копирование krb5.conf (без запроса подтверждения)
 \cp -f /var/lib/samba/private/krb5.conf /etc/krb5.conf 2>/dev/null
 
+systemctl enable samba
 # Полная замена smb.conf
 cat > /etc/samba/smb.conf << 'EOF'
 # Global parameters
@@ -25,7 +26,6 @@ cat > /etc/samba/smb.conf << 'EOF'
 EOF
 
 # Включение и перезапуск Samba
-systemctl enable samba
 systemctl restart samba
 
 echo "samba-tool user create hquser1 P@ssw0rd и samba-tool group add hq
