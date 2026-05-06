@@ -21,5 +21,3 @@ fi
 systemctl restart samba
 
 samba-tool domain info 127.0.0.1
-
-echo "Готово! Samba DC настроен на BR-SRV"
