@@ -7,21 +7,21 @@
 cat > /etc/samba/smb.conf << 'EOF'
 # Global parameters
 [global]
-    dns forwarder = 192.168.1.2
-    netbios name = BR-SRU
-    realm = AU-TEAM.IRPO
-    server role = active directory domain controller
-    workgroup = AU-TEAM
-    interfaces = lo ens18
-    bind interfaces only = yes
+        dns forwarder = 192.168.1.2
+        netbios name = BR-SRU
+        realm = AU-TEAM.IRPO
+        server role = active directory domain controller
+        workgroup = AU-TEAM
+        interfaces = lo ens18
+        bind interfaces only = yes
 
 [sysvol]
-    path = /var/lib/samba/sysvol
-    read only = No
+        path = /var/lib/samba/sysvol
+        read only = No
 
 [netlogon]
-    path = /var/lib/samba/sysvol/au-team.irpo/scripts
-    read only = No
+        path = /var/lib/samba/sysvol/au-team.irpo/scripts
+        read only = No
 EOF
 
 # Включение и перезапуск Samba
