@@ -28,18 +28,5 @@ EOF
 systemctl enable samba
 systemctl restart samba
 
-# Создание пользователей
-samba-tool user create hquser1 P@ssw0rd
-samba-tool user create hquser2 P@ssw0rd
-samba-tool user create hquser3 P@ssw0rd
-samba-tool user create hquser4 P@ssw0rd
-samba-tool user create hquser5 P@ssw0rd
-
-# Создание группы и добавление пользователей
-samba-tool group add hq
-samba-tool group addmembers hq hquser1,hquser2,hquser3,hquser4,hquser5
-
-# Проверка
-samba-tool user list
-
-echo "Готово! Samba DC настроен, пользователи и группа созданы"
+echo "samba-tool user create hquser1 P@ssw0rd и samba-tool group add hq
+samba-tool group addmembers hq hquser1,"
