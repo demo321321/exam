@@ -4,7 +4,7 @@
 \cp -f /var/lib/samba/private/krb5.conf /etc/krb5.conf 2>/dev/null
 
 # Включение Samba
-systemctl enable samba --now
+systemctl enable samba
 
 # Проверка, есть ли уже строки interfaces в smb.conf
 if ! grep -q "interfaces = lo ens18" /etc/samba/smb.conf; then
