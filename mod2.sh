@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 
 # Создание RAID0 из дисков sdb и sdc
