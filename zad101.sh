@@ -7,7 +7,6 @@ apt-get install dnsmasq -y
 # Добавление конфигурации в конец файла /etc/dnsmasq.conf
 cat >> /etc/dnsmasq.conf << 'EOF'
 
-# Добавленная конфигурация
 interface=*
 server=8.8.8.8
 domain=au-team.irpo
