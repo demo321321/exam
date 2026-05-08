@@ -35,9 +35,7 @@ mount -a
 df -h | grep /mnt/nfs
 
 # Создание тестового файла
-touch /mnt/nfs/test 2>/dev/null
+touch /mnt/nfs/test
 
 # Проверка
-echo "скрин"
-ls -lah /mnt/nfs/
-
+echo "скрин ls /mnt/nfs после touch /mnt/nfs/test"
