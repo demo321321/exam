@@ -40,7 +40,6 @@ systemctl enable raid.mount --now
 mount -a
 
 # Проверка
+echo "Готово!"
 df -h | grep raid
 lsblk | grep md0
-
-echo "Готово! RAID0 создан и смонтирован в /raid"
