@@ -1,24 +1,31 @@
 #!/bin/bash
 
-# Установка chrony (автоматический ответ Yes)
-apt-get update && apt-get install -y chrony
+# Обновление и установка chrony
+apt update
+apt install chrony -y
 
-# Комментирование старой строки pool и добавление новых настроек
-sed -i 's/^pool 2.debian.pool.ntp.org iburst/#pool 2.debian.pool.ntp.org iburst/' /etc/chrony/chrony.conf
+# Комментирование строк pool и rtcSync
+sed -i 's/^pool /#pool /' /etc/chrony/chrony.conf
+sed -i 's/^rtcSync /#rtcSync /' /etc/chrony/chrony.conf
 
-# Добавление новых настроек в конец файла
+# Добавление настроек в конец файла
 cat >> /etc/chrony/chrony.conf << 'EOF'
 
-# Добавленные настройки NTP
-server 0.ru.pool.ntp.org iburst prefer minstratum 4
 local stratum 5
-allow 0.0.0.0/0
+allow 172.16.1.0/28
+allow 172.16.2.0/28
+allow 192.168.1.0/27
+allow 192.168.2.0/28
+allow 192.168.3.0/28
 EOF
 
-# Перезапуск службы
+# Перезапуск chrony
 systemctl restart chronyd
 
-# Включение в автозагрузку
-systemctl enable chronyd
+# Отключение синхронизации времени
+timedatectl set-ntp 0
+
+# скрин
+timedatectl
 
 echo "mod4b.sh"
