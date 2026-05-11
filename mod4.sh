@@ -24,4 +24,4 @@ systemctl enable chronyd
 #скрин
 systemctl status chronyd
 
-echo "mod4b.sh"
+echo "/etc/chrony/chr"
