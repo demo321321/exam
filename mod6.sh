@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Отключение ahttpd
-systemctl disable ahttpd --now 2>/dev/null
+systemctl disable ahttpd --now
 
 # Установка Docker и Docker Compose
 apt-get update
@@ -13,22 +13,59 @@ systemctl enable docker --now
 # Создание директории для монтирования
 mkdir -p /mnt/add_cd
 
-# Монтирование диска (если /dev/sr0 существует)
-mount /dev/sr0 /mnt/add_cd 2>/dev/null
+# Монтирование диска
+mount /dev/sr0 /mnt/add_cd
 
 # Копирование директории docker
 cp -r /mnt/add_cd/docker /root/
 
 # Импорт Docker-образов
 docker image load -i /root/docker/site_latest.tar
-
 docker image load -i /root/docker/mariadb_latest.tar
 
-# Проверка образов
-docker images
-
 # Создание директории testapp
-mkdir -p testapp
-cd testapp
+mkdir -p /root/testapp
+cd /root/testapp
 
-echo "Готово! Docker настроен, образы импортированы"
+# Создание файла docker-compose.yaml
+cat > docker-compose.yaml << 'EOF'
+services:
+ testapp:
+  image: site:latest
+  container_name: testapp
+  restart: always
+  depends_on:
+   - db
+  ports:
+   - 8080:8080
+  environment:
+
+   DB_TYPE: postgres
+   DB_HOST: db
+   DB_NAME: testdb
+   DB_PORT: 5432
+   DB_USER: test
+   DB_PASS: P@ssw0rd
+
+ db:
+  image: postgres:15-alpine
+  container_name: db
+  restart: always
+  environment:
+   POSTGRES_DB: testdb
+   POSTGRES_USER: test
+   POSTGRES_PASSWORD: P@ssw0rd
+  volumes:
+   - db_data:/var/lib/postgresql/data
+
+volumes:
+ db_data:
+EOF
+
+# Запуск контейнеров
+docker compose up -d
+
+# Проверка работающих контейнеров
+docker ps
+
+echo "cli http://192.168.3.2:8080"
