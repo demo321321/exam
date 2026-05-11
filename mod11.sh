@@ -2,9 +2,6 @@
 
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 
-# Отключение BIND
-systemctl disable bind --now 2>/dev/null
-
 # Включение Samba
 systemctl enable samba --now
 
@@ -27,3 +24,4 @@ samba-tool group add hq
 
 samba-tool group addmembers hq hquser1,hquser2,hquser3,hquser4,hquser5
 
+echo "/etc/sudoers | %hq    ALL = NOPASSWD: /usr/bin/cat, /bin/grep, /usr/bin/id"
