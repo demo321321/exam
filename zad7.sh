@@ -32,7 +32,5 @@ do wr mem
 exit
 EOF
 
-apt update
-apt-get install -y isc-dhcp-server
 
 echo "zad72"
