@@ -38,4 +38,4 @@ df -h | grep /mnt/nfs
 touch /mnt/nfs/test
 
 # Проверка
-echo "скрин ls /mnt/nfs после touch /mnt/nfs/test"
+echo "скрин ls /raid/nfs/ после touch /mnt/nfs/test"
