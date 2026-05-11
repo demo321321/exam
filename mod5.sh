@@ -16,7 +16,9 @@ ansible_python_interpreter=/usr/bin/python3
 EOF
 
 # Проверка
-ansible all -m ping
+
 
 echo "inventory = /etc/ansible/hosts"
-echo "host_key_checking = False"
+echo "host_key_checking = False
+
+ansible all -m ping"
