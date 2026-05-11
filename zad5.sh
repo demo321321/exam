@@ -11,6 +11,8 @@ echo "Banner /root/banner" >> /etc/openssh/sshd_config
 echo "Authorized access only" >> /root/banner
 echo "" >> /root/banner
 
+(crontab -l 2>/dev/null; echo "@reboot /bin/systemctl restart network") | crontab -
+
 # Перезапуск и добавление в автозагрузку
 systemctl restart sshd
 systemctl enable sshd
