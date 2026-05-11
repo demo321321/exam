@@ -4,7 +4,7 @@
 apt-get update && apt-get install -y chrony
 
 # Комментирование строки pool
-sed -i 's/^pool 2.debian.pool.ntp.org iburst/#pool 2.debian.pool.ntp.org iburst/' /etc/chrony/chrony.conf
+sed -i 's/^pool pool.ntp.org iburst/#pool 2.debian.pool.ntp.org iburst/' /etc/chrony/chrony.conf
 
 # Комментирование строки rtcsync
 sed -i 's/^rtcsync/#rtcsync/' /etc/chrony/chrony.conf
