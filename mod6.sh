@@ -68,7 +68,7 @@ EOF
 
 echo "cli http://192.168.3.2:8080
 
-поменять docker-compose.yaml
+поменять /testapp/docker-compose.yaml
 
 docker compose up -d
 
