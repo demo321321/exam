@@ -15,8 +15,8 @@ BR-RTR ansible_host=192.168.3.1 ansible_user=net_admin ansible_password=P@ssw0rd
 ansible_python_interpreter=/usr/bin/python3
 EOF
 
-
 # Проверка
 ansible all -m ping
 
-echo "Готово! Ansible настроен"
+echo "inventory = /etc/ansible/hosts"
+echo "host_key_checking = False"
