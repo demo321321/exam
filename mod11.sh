@@ -10,7 +10,8 @@ systemctl enable samba --now
 
 # Добавление настроек interfaces
 echo 'interfaces = lo ens18 |
-bind interfaces only = yes'
+bind interfaces only = yes |
+/etc/samba/smb'
 
 # Перезапуск
 systemctl restart samba
