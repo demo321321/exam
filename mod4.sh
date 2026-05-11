@@ -21,4 +21,7 @@ systemctl restart chronyd
 # Включение в автозагрузку
 systemctl enable chronyd
 
+#скрин
+systemctl status chronyd
+
 echo "mod42.sh"
