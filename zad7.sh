@@ -18,10 +18,12 @@ systemctl restart frr
 vtysh << EOF
 conf t
 router ospf
+network 10.0.0.0/30 area 0
 network 192.168.1.0/27 area 0
 network 192.168.2.0/28 area 0
 network 192.169.99.0/29 area 0
 exit
+do wr mem
 interface gre1
 ip ospf authentication message-digest
 ip ospf message-digest-key 1 md5 P@ssw0rd
