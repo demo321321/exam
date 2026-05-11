@@ -22,8 +22,8 @@ systemctl enable samba --now
 
 # Добавление настроек interfaces
 sed -i '/\[global\]/a\
-interfaces = lo ens18\
-bind interfaces only = yes' /etc/samba/smb.conf
+  interfaces = lo ens18\
+  bind interfaces only = yes' /etc/samba/smb.conf
 
 # Перезапуск
 systemctl restart samba
