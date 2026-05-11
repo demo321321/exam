@@ -3,6 +3,8 @@
 # Установка NFS-клиента
 apt-get update
 apt-get install nfs-common -y
+apt-get install openssh
+systemctl enable –now sshd
 
 # Создание директории для монтирования
 mkdir -p /mnt/nfs
