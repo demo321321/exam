@@ -33,4 +33,5 @@ exit
 EOF
 
 
-echo "zad72"
+echo "скрин show running-config
+zad72"
