@@ -37,7 +37,7 @@ services:
     depends_on:
       - db
     ports:
-      - 8080:8080
+      - 8080:8000
     environment:
 
       DB_TYPE: postgres
