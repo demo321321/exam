@@ -30,36 +30,36 @@ cd /root/testapp
 # Создание файла docker-compose.yaml
 cat > docker-compose.yaml << 'EOF'
 services:
-1testapp:
-2image: site:latest
-2container_name: testapp
-2restart: always
-2depends_on:
-3- db
-2ports:
-3- 8080:8080
-2environment:
+  testapp:
+    image: site:latest
+    container_name: testapp
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+    environment:
 
-3DB_TYPE: postgres
-3DB_HOST: db
-3DB_NAME: testdb
-3DB_PORT: 5432
-3DB_USER: test
-3DB_PASS: P@ssw0rd
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_NAME: testdb
+      DB_PORT: 5432
+      DB_USER: test
+      DB_PASS: P@ssw0rd
 
-1db:
-2image: postgres:15-alpine
-2container_name: db
-2restart: always
-2environment:
-3POSTGRES_DB: testdb
-3POSTGRES_USER: test
-3POSTGRES_PASSWORD: P@ssw0rd
-2volumes:
-3- db_data:/var/lib/postgresql/data
+  db:
+    image: postgres:15-alpine
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: P@ssw0rd
+    volumes:
+      - db_data:/var/lib/postgresql/data
 
 volumes:
-1db_data:
+  db_data:
 EOF
 
 
