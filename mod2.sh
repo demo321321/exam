@@ -38,8 +38,3 @@ systemctl enable raid.mount --now
 
 # Перемонтирование всех файловых систем
 mount -a
-
-# Проверка
-echo "Готово!"
-df -h | grep raid
-lsblk | grep md0
