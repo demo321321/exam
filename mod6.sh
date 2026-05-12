@@ -55,6 +55,7 @@ services:
       POSTGRES_DB: testdb
       POSTGRES_USER: test
       POSTGRES_PASSWORD: P@ssw0rd
+
     volumes:
       - /root/testapp/db_data:/var/lib/mysql
 
