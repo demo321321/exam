@@ -21,4 +21,5 @@ exportfs -a
 # Активация и добавление в автозагрузку
 systemctl enable nfs-server --now
 
-echo "mod3cli"
+echo "скрин /etc/exports
+mod3cli"
