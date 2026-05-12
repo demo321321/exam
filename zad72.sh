@@ -28,3 +28,5 @@ exit
 do wr mem
 exit
 EOF
+
+echo "скрин show running-config"
