@@ -68,6 +68,5 @@ docker compose up -d
 # Добавление задачи в crontab для автозапуска после перезагрузки
 (crontab -l 2>/dev/null; echo "@reboot cd /root/testapp && /usr/bin/docker compose up -d") | crontab -
 
-echo "cli http://192.168.3.2:8080
-
-docker ps"
+echo "скрин /root/testapp/docker
+cli http://192.168.3.2:8080"
