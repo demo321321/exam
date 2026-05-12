@@ -24,7 +24,6 @@ mariadb -u root << EOF
 CREATE DATABASE webdb;
 CREATE USER 'web'@'localhost' IDENTIFIED BY 'P@ssw0rd';
 GRANT ALL PRIVILEGES ON webdb.* TO 'web'@'localhost' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
 EXIT;
 EOF
 
