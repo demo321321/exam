@@ -33,3 +33,5 @@ systemctl restart isc-dhcp-server
 
 # Добавление в автозагрузку
 systemctl enable isc-dhcp-server
+
+echo "скрин /etc/dhcp/dhcpd.conf"
