@@ -19,6 +19,8 @@ sed -i 's/servername = ".*"/servername = "localhost"/' /var/www/html/index.php
 # Включение и запуск mariadb
 systemctl enable --now mariadb
 
+sleep 5
+
 # Настройка базы данных
 mariadb -u root << EOF
 CREATE DATABASE webdb;
