@@ -16,24 +16,19 @@ sed -i 's/password = ".*"/password = "P@ssw0rd"/' /var/www/html/index.php
 sed -i 's/dbname = ".*"/dbname = "webdb"/' /var/www/html/index.php
 sed -i 's/servername = ".*"/servername = "localhost"/' /var/www/html/index.php
 
-echo "mcedit /etc/httpd2/conf/sites-available/default.conf
-systemctl enable --now httpd2"
-
 # Включение и запуск mariadb
-#systemctl enable --now mariadb
+systemctl enable --now mariadb
 
 # Настройка базы данных
-#mariadb -u root << EOF
-#CREATE DATABASE webdb;
-#CREATE USER 'web'@'localhost' IDENTIFIED BY 'P@ssw0rd';
-#GRANT ALL PRIVILEGES ON webdb.* TO 'web'@'localhost' WITH GRANT OPTION;
-#FLUSH PRIVILEGES;
-#EXIT;
-#EOF
+mariadb -u root << EOF
+CREATE DATABASE webdb;
+CREATE USER 'web'@'localhost' IDENTIFIED BY 'P@ssw0rd';
+GRANT ALL PRIVILEGES ON webdb.* TO 'web'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+EOF
 
 # Импорт dump.sql
-#mariadb -u web -pP@ssw0rd -D webdb < /mnt/web/dump.sql
+mariadb -u web -pP@ssw0rd -D webdb < /mnt/web/dump.sql
 
-
-
-# Включение и запуск httpd2
+systemctl enable --now httpd2
