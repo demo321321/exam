@@ -33,5 +33,5 @@ exit
 EOF
 
 
-echo "скрин show running-config
+echo "скрин do show ip ospf route
 zad72"
