@@ -33,17 +33,6 @@ do wr mem
 exit
 EOF
 
-sleep 2
-
-vtysh << EOF
-conf t
-router ospf
-network 10.0.0.0/30 area 0
-network 192.169.99.0/29 area 0
-exit
-do wr mem
-EOF
-
 
 echo "скрин do show ip ospf route
 zad72"
