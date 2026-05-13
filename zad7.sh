@@ -32,7 +32,5 @@ do wr mem
 exit
 EOF
 
-systemctl restart frr
-
 echo "скрин do show ip ospf route
 zad72"
