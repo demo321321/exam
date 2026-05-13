@@ -14,7 +14,7 @@ sed -i 's/ospfd=no/ospfd=yes/' /etc/frr/daemons
 systemctl enable frr
 systemctl restart frr
 
-sleep 2
+sleep 5
 # Настройка OSPF через vtysh
 vtysh << EOF
 conf t
