@@ -28,6 +28,7 @@ subnet 192.168.2.0 netmask 255.255.255.240 {
 }
 EOF
 
+sleep 5
 # Перезапуск DHCP-сервера
 systemctl restart isc-dhcp-server
 
