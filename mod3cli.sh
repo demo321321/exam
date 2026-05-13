@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Установка NFS-клиента
+# Установка NFS-клиента (для ALT Linux)
 apt-get update
-apt-get install nfs-common -y
-apt-get install openssh
-systemctl enable –now sshd
+apt-get install -y nfs-client
+apt-get install -y openssh
+systemctl enable --now sshd
 
 # Создание директории для монтирования
 mkdir -p /mnt/nfs
