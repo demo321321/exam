@@ -33,6 +33,8 @@ do wr mem
 exit
 EOF
 
+sleep 2
+
 vtysh << EOF
 conf t
 router ospf
