@@ -21,4 +21,5 @@ systemctl restart chronyd
 # Включение в автозагрузку
 systemctl enable chronyd
 
-echo "mod4b"
+echo "mod4b
+mod4c"
