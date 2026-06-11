@@ -6,3 +6,5 @@ iptables -t nat -A PREROUTING -d 172.16.1.2 -p tcp --dport 2026 -j DNAT --to-des
 
 # Сохранение конфигурации
 iptables-save > /etc/rules.v4
+
+echo "."
