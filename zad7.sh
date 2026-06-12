@@ -22,7 +22,6 @@ router ospf
 network 10.0.0.0/30 area 0
 network 192.168.1.0/27 area 0
 network 192.168.2.0/28 area 0
-network 192.168.3.0/28 area 0
 network 192.169.99.0/29 area 0
 exit
 interface gre1
