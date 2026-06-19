@@ -8,5 +8,5 @@ apt-get install isc-dhcp-server -y
 sed -i 's/^INTERFACESv4=.*/INTERFACESv4="eth1.200"/' /etc/default/isc-dhcp-server
 
 
-echo "/etc/default/isc-dhcp-server eth1.200(hq)
+echo "/etc/default/isc-dhcp-server eth1.[200](hq)
 zad91.sh"
