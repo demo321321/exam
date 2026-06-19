@@ -31,3 +31,5 @@ systemctl restart dnsmasq
 
 # Включение в автозагрузку и запуск
 systemctl enable dnsmasq --now
+
+echo "адрес docker, web поменять и рестарт dns"
