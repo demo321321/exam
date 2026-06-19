@@ -26,10 +26,8 @@ address=/docker.au-team.irpo/172.16.1.1
 address=/web.au-team.irpo/172.16.2.1
 EOF
 
-# Перезапуск dnsmasq
-systemctl restart dnsmasq
-
 # Включение в автозагрузку и запуск
 systemctl enable dnsmasq --now
 
-echo "адрес docker, web поменять и рестарт dns"
+echo "адрес docker, web поменять и рестарт dns
+systemctl restart dnsmasq"
