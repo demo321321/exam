@@ -18,6 +18,7 @@ echo "mount /dev/md[0]p1 /raid"
 
 echo "mod21.sh"
 
+
 # Создание systemd-unit для автоматического монтирования
 cat > /etc/systemd/system/raid.mount << 'EOF'
 [Unit]
