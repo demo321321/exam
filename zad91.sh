@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cp /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.bkp
 
 # Комментирование строк option domain-name и option domain-name-servers
