@@ -21,5 +21,8 @@ systemctl restart chronyd
 # Включение в автозагрузку
 systemctl enable chronyd
 
-echo "mod4b
+echo "/etc/chrony/chrony.conf
+local stratum 5
+
+mod4b
 mod4c"
