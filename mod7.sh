@@ -11,7 +11,7 @@ cp /mnt/web/index.php /var/www/html/
 cp /mnt/web/logo.png /var/www/html/
 
 # Редактирование index.php с правильными учётными данными
-sed -i 's/username = ".*"/username = "web"/' /var/www/html/index.php
+sed -i 's/username = ".*"/username = "web2"/' /var/www/html/index.php
 sed -i 's/password = ".*"/password = "P@ssw0rd"/' /var/www/html/index.php
 sed -i 's/dbname = ".*"/dbname = "webdb"/' /var/www/html/index.php
 sed -i 's/servername = ".*"/servername = "localhost"/' /var/www/html/index.php
