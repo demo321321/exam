@@ -18,7 +18,7 @@ echo "mount /dev/md[0]p1 /raid"
 
 echo "mod21.sh"
 
-echo "/etc/systemd/system/raid.m"
+echo "mcedit /etc/systemd/system/raid.m"
 
 
 # Создание systemd-unit для автоматического монтирования
