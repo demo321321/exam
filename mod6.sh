@@ -63,10 +63,13 @@ volumes:
   db_data:
 EOF
 
-docker compose up -d
-
 # Добавление задачи в crontab для автозапуска после перезагрузки
 (crontab -l 2>/dev/null; echo "@reboot cd /root/testapp && /usr/bin/docker compose up -d") | crontab -
+
+
+
+
+echo "docker compose up -d"
 
 echo "скрин /root/testapp/docker
 cli http://192.168.3.2:8080"
