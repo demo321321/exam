@@ -10,7 +10,7 @@ server {
     server_name web.au-team.irpo;
 
     location / {
-        proxy_pass http://172.16.1.2:8080;
+        proxy_pass http://172.16.1.2:[8080];
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -23,7 +23,7 @@ server {
     server_name docker.au-team.irpo;
 
     location / {
-        proxy_pass http://172.16.2.2:8080;
+        proxy_pass http://172.16.2.2:[8080];
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -32,13 +32,12 @@ server {
 }
 EOF
 
-# Проверка конфигурации
-nginx -t
+
+systemctl enable nginx
 
 # Перезапуск nginx
-systemctl restart nginx
+echo "/etc/nginx/sites-available/default"
+echo "systemctl restart nginx"
 
-# Включение в автозагрузку
-systemctl enable nginx
 
 echo "Готово! nginx настроен как reverse proxy"
