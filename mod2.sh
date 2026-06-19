@@ -24,10 +24,10 @@ echo "/etc/systemd/system/raid.m"
 # Создание systemd-unit для автоматического монтирования
 cat > /etc/systemd/system/raid.mount << 'EOF'
 [Unit]
-Description=Mount RAID0
+Description=Mount RAID[0]
 
 [Mount]
-What=/dev/md0p1
+What=/dev/md[0]p1
 Where=/raid
 Type=ext4
 Options=defaults
