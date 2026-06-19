@@ -16,3 +16,5 @@ echo "" >> /root/banner
 # Перезапуск и добавление в автозагрузку
 systemctl restart sshd
 systemctl enable sshd
+
+echo "порт в /etc/openssh/sshd"
